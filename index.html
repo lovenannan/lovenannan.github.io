@@ -20,9 +20,9 @@
 <body>
 
 
-<audio autoplay="autopaly">
-<source src="http://www.hunlipic.com/e/mp3/wky.mp3" type="audio/mp3"/>
-</audio>
+    <audio autoplay="autopaly" loop="loop">
+    <source src="http://www.hunlipic.com/e/mp3/wky.mp3" type="audio/mp3"/>
+    </audio>
 
 	<canvas id="drawHeart"></canvas>
 
@@ -36,7 +36,7 @@
 		// 创建图片对象
 		var heartImage = new Image();
 		heartImage.src = 'images/heart.svg';
-		var num = 20;
+		var num = 60;
 
 		init();
 
@@ -80,12 +80,12 @@
 		}
 
 		function getText(){
-			var val = Math.random() * 10;
-			if(val > 1 && val <= 3){
-				return '爱你一辈子';
-			} else if(val > 3 && val <= 5){
-				return '感谢你';
-			} else if(val > 5 && val <= 8){
+			var val = Math.random() * 100;
+			if(val > 0 && val <= 30){
+				return '爱你没道理';
+			} else if(val > 30 && val <= 60){
+				return '楠丫头';
+			} else if(val > 60 && val <= 80){
 				return '喜欢你';
 			} else{
 				return 'I Love You';
@@ -166,8 +166,8 @@
 			this.fy += this.fvel.y;
 			this.fs += this.fvel.f;
 
-			if(this.fs > 50){
-				this.fs = 2;
+			if(this.fs > 40){
+				this.fs = 12;
 			}
 
 			if(this.fx - this.fs > wW || this.fx + this.fs < 0){
