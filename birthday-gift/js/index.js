@@ -9,6 +9,7 @@ https://codepen.io/chuongdang/pen/yzpDG
 - moon 
 https://codepen.io/agelber/pen/sjIKp
 */
+
 window.requestAnimFrame = function () {
 	return window.requestAnimationFrame || window.webkitRequestAnimationFrame || window.mozRequestAnimationFrame || function (callback) {
 		window.setTimeout(callback, 1000 / 60);
@@ -305,10 +306,20 @@ function reveal() {
 		w = 255;h = 155;
 	}
 
-	var ifrm = document.createElement("iframe");
-	ifrm.setAttribute("src", "https://www.youtube.com/embed/KDxJlW6cxRk?controls=0&loop=1&autoplay=1");
-	//ifrm.style.width = `${w}px`;
-	//ifrm.style.height = `${h}px`;
-	ifrm.style.border = 'none';
-	document.querySelector('#video').appendChild(ifrm);
+	var video = document.createElement("video");
+	video.setAttribute("src", "video/videoplayback.mp4");
+	video.setAttribute("loop", "loop");
+	video.setAttribute("autoplay","autoplay");
+	// video.setAttribute("controls","none");
+	//video.style.width = `${w}px`;
+	//video.style.height = `${h}px`;
+	video.style.border = 'none';
+	if (window.innerWidth >= 1000) {
+		video.style.width = '290px';
+		video.style.height = '185px';
+	} else {
+		video.style.width = '255px';
+		video.style.height = '155px';
+	}
+	document.querySelector('#video').appendChild(video);
 }
