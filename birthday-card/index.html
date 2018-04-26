@@ -77,6 +77,17 @@
       background-color: #d2dcd2;
     }
 
+    .card:active .front {
+      transform: perspective(800px) rotateY(-170deg);
+      background-color: #41718d;
+    }
+
+    .card:active .back {
+      transform: perspective(800px) rotateY(-170deg);
+      box-shadow: 7px 0px 5px 0px rgba(0, 0, 0, 0.3), inset 2px 0px 15px 0px rgba(0, 0, 0, 0.1);
+      background-color: #d2dcd2;
+    }
+
     .card .back {
       position: absolute;
       width: 100%;
